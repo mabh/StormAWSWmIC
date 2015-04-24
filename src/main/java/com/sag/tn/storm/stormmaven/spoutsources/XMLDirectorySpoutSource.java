@@ -29,7 +29,7 @@ import com.ximpleware.VTDNav;
  * reads xml files 1 by 1 files from a directory
  * create VTD object from it and returns a tuple
  */
-public class XMLDirectorySpoutSource implements ISpoutSource {
+public final class XMLDirectorySpoutSource implements ISpoutSource {
 
 	private VTDGen vg = new VTDGen();
 	private final String directory;
