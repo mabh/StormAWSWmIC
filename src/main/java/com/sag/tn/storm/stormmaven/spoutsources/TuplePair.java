@@ -14,7 +14,7 @@ package com.sag.tn.storm.stormmaven.spoutsources;
  * @author MABH
  * A 2-Tuple
  */
-public class TuplePair<A, B> {
+public final class TuplePair<A, B> {
 	private A a;
 	private B b;
 	

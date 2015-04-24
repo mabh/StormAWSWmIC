@@ -32,7 +32,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 @SuppressWarnings("serial")
-public class CounterIncrementorBolt implements IRichBolt {
+public final class CounterIncrementorBolt implements IRichBolt {
 
 	private OutputCollector collector;
 	private Logger logger = LoggerFactory.getLogger(CounterIncrementorBolt.class);

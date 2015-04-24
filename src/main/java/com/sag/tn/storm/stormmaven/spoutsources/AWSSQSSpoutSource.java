@@ -22,7 +22,7 @@ import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.ximpleware.VTDGen;
 import com.ximpleware.VTDNav;
 
-public class AWSSQSSpoutSource implements ISpoutSource {
+public final class AWSSQSSpoutSource implements ISpoutSource {
 
 	private AmazonSQS sqs = new AmazonSQSClient(new ProfileCredentialsProvider().getCredentials());
 	private String sqsQueueURL;

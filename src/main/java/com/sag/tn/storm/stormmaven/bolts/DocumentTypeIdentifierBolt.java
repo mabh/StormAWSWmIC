@@ -40,7 +40,7 @@ import com.ximpleware.NavException;
 import com.ximpleware.VTDNav;
 
 @SuppressWarnings("serial")
-public class DocumentTypeIdentifierBolt implements IRichBolt {
+public final class DocumentTypeIdentifierBolt implements IRichBolt {
 
 	private OutputCollector collector;
 	private Logger logger = LoggerFactory.getLogger(DocumentTypeIdentifierBolt.class);

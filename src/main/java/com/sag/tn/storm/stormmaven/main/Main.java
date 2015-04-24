@@ -72,10 +72,10 @@ public class Main {
 	        }
         }*/
 		
-		MongoCredential credential = MongoCredential.createCredential("kunalkej", "ti-test-mongo-db", "kunalkej".toCharArray());
-		MongoClient mClient = new MongoClient(new ServerAddress("ds033760.mongolab.com", 33760), Arrays.asList(credential));
-		MongoDatabase db = mClient.getDatabase("ti-test-mongo-db");
-		MongoCollection<Document> coll = db.getCollection("document-type");
+		MongoCredential credential = MongoCredential.createCredential("gergreg", "45345453", "34534fgalkej".toCharArray());
+		MongoClient mClient = new MongoClient(new ServerAddress("rgergerg", 33760), Arrays.asList(credential));
+		MongoDatabase db = mClient.getDatabase("5235235235");
+		MongoCollection<Document> coll = db.getCollection("35235325235");
 		
 		/*MongoCursor<Document> cursor = coll.find(eq("rootTag", "IDataXMLCoder")).iterator();
 		while(cursor.hasNext()) {
