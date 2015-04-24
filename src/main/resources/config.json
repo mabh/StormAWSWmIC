@@ -1,0 +1,19 @@
+{
+	"config": {
+
+		"SpoutSource":				"aws",	
+	
+		"nimbusHost": 				"aws hostname",
+		
+		"MongoHostProperty": 		"MongoHost",
+		"MongoPortProperty": 		"MongoPort",
+		"MongoUserProperty": 		"MongoUser",
+		"MongoPassProperty": 		"MongoPass",
+		"MongoDBProperty": 			"MongoDatabase",
+		"MongoCollProperty": 		"MongoColl",
+		
+		"SQSQueueProperty": 		"SQSQueue",
+		"AWSAccountProperty": 		"AWSAccount",
+		"AWSServerURLProperty": 	"AWSServerURL"
+	}
+}	
