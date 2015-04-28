@@ -77,7 +77,7 @@ public final class DocumentTopologyMain {
 			Thread.sleep(20000);
 			localCluster.shutdown();
 		} else {
-			StormSubmitter.submitTopology("TNStorm", conf, builder.createTopology());
+			StormSubmitter.submitTopology("TNStorm_1", conf, builder.createTopology());
 		}
 	}
 }
