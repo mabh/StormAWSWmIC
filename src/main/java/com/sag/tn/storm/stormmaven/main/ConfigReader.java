@@ -10,9 +10,8 @@
 
 package com.sag.tn.storm.stormmaven.main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -23,12 +22,8 @@ public final class ConfigReader {
 	private JSONObject configJsonObject = null;
 	
 	private ConfigReader() {
-		try {
-			this.configJsonObject = (JSONObject)JSONValue.parse(new FileReader(new File("config.json")));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		InputStream is = getClass().getResourceAsStream("config.json");
+		this.configJsonObject = (JSONObject)JSONValue.parse(new InputStreamReader(is));
 	}
 	
 	public static ConfigReader getInstance() {
