@@ -24,7 +24,7 @@ public final class ConfigReader {
 	
 	private ConfigReader() {
 		try {
-			this.configJsonObject = (JSONObject)JSONValue.parse(new FileReader(new File("src/main/resources/config.json")));
+			this.configJsonObject = (JSONObject)JSONValue.parse(new FileReader(new File("config.json")));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
