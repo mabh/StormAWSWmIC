@@ -22,7 +22,7 @@ public final class ConfigReader {
 	private JSONObject configJsonObject = null;
 	
 	private ConfigReader() {
-		InputStream is = getClass().getResourceAsStream("config.json");
+		InputStream is = getClass().getResourceAsStream("/config.json");
 		this.configJsonObject = (JSONObject)JSONValue.parse(new InputStreamReader(is));
 	}
 	
