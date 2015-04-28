@@ -3,7 +3,7 @@
 
 		"SpoutSource":				"aws",	
 	
-		"nimbusHost": 				"aws hostname",
+		"nimbusHost": 				"172.31.24.123",
 		
 		"MongoHostProperty": 		"MongoHost",
 		"MongoPortProperty": 		"MongoPort",
