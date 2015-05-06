@@ -28,7 +28,7 @@ public final class DocumentTopologyMain {
 	public static void main(String[] args) throws InterruptedException, AlreadyAliveException, InvalidTopologyException, TException {
 		
 		int nSupervisors = Util.getNumberOfSupervisors(ConfigReader.getInstance().get("nimbusHost"));
-		int workersMultiple = 3;	//worker processes per supervisor node
+		int workersMultiple = 1;	//worker processes per supervisor node
 		int executorsMultiple = 3;	//bolt executors per worker process
 		int nWorkers = workersMultiple * nSupervisors;
 		int nExecutors = executorsMultiple * nWorkers;
@@ -62,7 +62,7 @@ public final class DocumentTopologyMain {
 		conf.put("MongoDatabase", System.getProperty(ConfigReader.getInstance().get("MongoDBProperty")));
 		conf.put("MongoColl", System.getProperty(ConfigReader.getInstance().get("MongoCollProperty")));
 		conf.setNumWorkers(nWorkers);
-		conf.setDebug(false);
+		conf.setDebug(true);
 		conf.registerSerialization(com.ximpleware.VTDNav.class, com.sag.tn.storm.stormmaven.vtd.VSerializer.class);
 
 		
@@ -73,11 +73,11 @@ public final class DocumentTopologyMain {
 		 */
 		if("local".equalsIgnoreCase(args[0])) {
 			LocalCluster localCluster = new LocalCluster();
-			localCluster.submitTopology("TNStorm", conf, builder.createTopology());
+			localCluster.submitTopology("B2BaaS", conf, builder.createTopology());
 			Thread.sleep(20000);
 			localCluster.shutdown();
 		} else {
-			StormSubmitter.submitTopology("TNStorm_1", conf, builder.createTopology());
+			StormSubmitter.submitTopology("B2BaaS", conf, builder.createTopology());
 		}
 	}
 }

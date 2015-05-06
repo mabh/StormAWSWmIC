@@ -17,6 +17,7 @@ import java.util.List;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClient;
+import com.amazonaws.services.sqs.model.DeleteMessageRequest;
 import com.amazonaws.services.sqs.model.Message;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.ximpleware.VTDGen;
@@ -48,6 +49,7 @@ public final class AWSSQSSpoutSource implements ISpoutSource {
 				this.vg.setDoc(message.getBody().getBytes());
 				this.vg.parse(true);
 				list.add(new TuplePair<>(vg.getNav(), message.getMessageId()));
+				sqs.deleteMessage(new DeleteMessageRequest(this.sqsQueueURL, message.getReceiptHandle()));
 				this.vg.clear();
 			}
 		} catch(Exception e) {
